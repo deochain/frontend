@@ -7,7 +7,7 @@ import type { CustomLinksGroup } from 'types/footerLinks';
 
 import config from 'configs/app';
 import type { ResourceError } from 'lib/api/resources';
-import useApiQuery from 'lib/api/useApiQuery';
+// import useApiQuery from 'lib/api/useApiQuery';
 import useFetch from 'lib/hooks/useFetch';
 // import useIssueUrl from 'lib/hooks/useIssueUrl';
 import { copy } from 'lib/html-entities';
@@ -18,7 +18,7 @@ import NetworkAddToWallet from 'ui/shared/NetworkAddToWallet';
 
 import FooterLinkItem from './FooterLinkItem';
 import IntTxsIndexingStatus from './IntTxsIndexingStatus';
-import getApiVersionUrl from './utils/getApiVersionUrl';
+// import getApiVersionUrl from './utils/getApiVersionUrl';
 
 const MAX_LINKS_COLUMNS = 4;
 
@@ -27,12 +27,12 @@ const FRONT_COMMIT_URL = `https://github.com/blockscout/frontend/commit/${ confi
 
 const Footer = () => {
 
-  const { data: backendVersionData } = useApiQuery('config_backend_version', {
-    queryOptions: {
-      staleTime: Infinity,
-    },
-  });
-  const apiVersionUrl = getApiVersionUrl(backendVersionData?.backend_version);
+  // const { data: backendVersionData } = useApiQuery('config_backend_version', {
+  //   queryOptions: {
+  //     staleTime: Infinity,
+  //   },
+  // });
+  // const apiVersionUrl = getApiVersionUrl(backendVersionData?.backend_version);
   // const issueUrl = useIssueUrl(backendVersionData?.backend_version);
   const logoColor = useColorModeValue('blue.600', 'white');
 
@@ -132,7 +132,7 @@ const Footer = () => {
         </Box>
       </Box>
     );
-  }, [ apiVersionUrl, backendVersionData?.backend_version, frontendLink, logoColor ]);
+  }, []);
 
   const containerProps: HTMLChakraProps<'div'> = {
     as: 'footer',

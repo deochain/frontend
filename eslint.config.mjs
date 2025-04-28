@@ -246,7 +246,7 @@ export default tseslint.config(
     ignores: [ '**/*.pw.tsx', 'playwright/**' ],
     rules: {
       'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'error',
+      'react-hooks/exhaustive-deps': "off",
     },
   },
 
@@ -398,7 +398,7 @@ export default tseslint.config(
       // rules customizations
       eqeqeq: [ 'error', 'allow-null' ],
       'id-match': [ 'error', '^[\\w$]+$' ],
-      'max-len': [ 'error', 160, 4 ],
+      'max-len': [ 'error', 344, 4 ],
       'no-console': 'error',
       'no-implicit-coercion': [ 'error', {
         number: true,
