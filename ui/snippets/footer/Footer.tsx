@@ -9,10 +9,10 @@ import config from 'configs/app';
 import type { ResourceError } from 'lib/api/resources';
 import useApiQuery from 'lib/api/useApiQuery';
 import useFetch from 'lib/hooks/useFetch';
-import useIssueUrl from 'lib/hooks/useIssueUrl';
+// import useIssueUrl from 'lib/hooks/useIssueUrl';
 import { copy } from 'lib/html-entities';
 import Skeleton from 'ui/shared/chakra/Skeleton';
-import IconSvg from 'ui/shared/IconSvg';
+// import IconSvg from 'ui/shared/IconSvg';
 import { CONTENT_MAX_WIDTH } from 'ui/shared/layout/utils';
 import NetworkAddToWallet from 'ui/shared/NetworkAddToWallet';
 
@@ -33,46 +33,30 @@ const Footer = () => {
     },
   });
   const apiVersionUrl = getApiVersionUrl(backendVersionData?.backend_version);
-  const issueUrl = useIssueUrl(backendVersionData?.backend_version);
+  // const issueUrl = useIssueUrl(backendVersionData?.backend_version);
   const logoColor = useColorModeValue('blue.600', 'white');
 
   const BLOCKSCOUT_LINKS = [
-    {
-      icon: 'edit' as const,
-      iconSize: '16px',
-      text: 'Submit an issue',
-      url: issueUrl,
-    },
+  
     {
       icon: 'social/git' as const,
       iconSize: '18px',
       text: 'Contribute',
-      url: 'https://github.com/blockscout/blockscout',
+      url: 'https://github.com/',
     },
     {
       icon: 'social/twitter' as const,
       iconSize: '18px',
       text: 'X (ex-Twitter)',
-      url: 'https://x.com/blockscout',
+      url: 'https://x.com',
     },
     {
       icon: 'social/discord' as const,
       iconSize: '24px',
       text: 'Discord',
-      url: 'https://discord.gg/blockscout',
+      url: 'https://discord.gg/',
     },
-    {
-      icon: 'brands/blockscout' as const,
-      iconSize: '18px',
-      text: 'All chains',
-      url: 'https://www.blockscout.com/chains-and-projects',
-    },
-    {
-      icon: 'donate' as const,
-      iconSize: '20px',
-      text: 'Donate',
-      url: 'https://github.com/sponsors/blockscout',
-    },
+   
   ];
 
   const frontendLink = (() => {
@@ -118,7 +102,7 @@ const Footer = () => {
   const renderProjectInfo = React.useCallback((gridArea?: GridProps['gridArea']) => {
     return (
       <Box gridArea={ gridArea }>
-        <Flex columnGap={ 2 } fontSize="xs" lineHeight={ 5 } alignItems="center" color="text">
+        {/* <Flex columnGap={ 2 } fontSize="xs" lineHeight={ 5 } alignItems="center" color="text">
           <span>Made with</span>
           <Link href="https://www.blockscout.com" isExternal display="inline-flex" color={ logoColor } _hover={{ color: logoColor }}>
             <IconSvg
@@ -127,12 +111,12 @@ const Footer = () => {
               height={ 4 }
             />
           </Link>
-        </Flex>
+        </Flex> */}
         <Text mt={ 3 } fontSize="xs">
-          Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.
+        Inertia is a next-generation blockchain explorer built for Ethereum and EVM-compatible networks, offering a clear, real-time window into the decentralized world. Whether you're tracking transactions, exploring smart contracts, or diving into token movements, Inertia turns complex blockchain data into a beautifully simple experience.      
         </Text>
         <Box mt={ 6 } alignItems="start" fontSize="xs" lineHeight={ 5 }>
-          { apiVersionUrl && (
+          {/* { apiVersionUrl && (
             <Text>
               Backend: <Link href={ apiVersionUrl } target="_blank">{ backendVersionData?.backend_version }</Link>
             </Text>
@@ -141,9 +125,9 @@ const Footer = () => {
             <Text>
               Frontend: { frontendLink }
             </Text>
-          ) }
+          ) } */}
           <Text>
-            Copyright { copy } Blockscout Limited 2023-{ (new Date()).getFullYear() }
+            Copyright { copy } Inertia Limited 2023-{ (new Date()).getFullYear() }
           </Text>
         </Box>
       </Box>
