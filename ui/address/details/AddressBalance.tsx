@@ -12,7 +12,7 @@ import { currencyUnits } from "lib/units";
 import CurrencyValue from "ui/shared/CurrencyValue";
 import * as DetailsInfoItem from "ui/shared/DetailsInfoItem";
 import NativeTokenIcon from "ui/shared/NativeTokenIcon";
-import useAccount from "lib/web3/useAccount";
+// import useAccount from "lib/web3/useAccount";
 
 interface Props {
   data: Pick<
@@ -30,8 +30,8 @@ const AddressBalance = ({ data, isLoading }: Props) => {
     data.block_number_balance_updated_at || 0
   );
   const queryClient = useQueryClient();
-  const { address } = useAccount();
-  console.log(address, "src4");
+  // const { address } = useAccount();
+  // console.log(address, "src4");
 
   const updateData = React.useCallback(
     (balance: string, exchangeRate: string, blockNumber: number) => {
