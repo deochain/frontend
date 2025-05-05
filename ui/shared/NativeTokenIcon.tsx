@@ -1,21 +1,21 @@
-import { Image, chakra } from '@chakra-ui/react';
-import React from 'react';
+import { Image, chakra } from "@chakra-ui/react";
+import React from "react";
 
-import config from 'configs/app';
-import useApiQuery from 'lib/api/useApiQuery';
-import { HOMEPAGE_STATS } from 'stubs/stats';
-import Skeleton from 'ui/shared/chakra/Skeleton';
+import config from "configs/app";
+import useApiQuery from "lib/api/useApiQuery";
+import { HOMEPAGE_STATS } from "stubs/stats";
+import Skeleton from "ui/shared/chakra/Skeleton";
 
-import TokenLogoPlaceholder from './TokenLogoPlaceholder';
+import TokenLogoPlaceholder from "./TokenLogoPlaceholder";
 
 type Props = {
   isLoading?: boolean;
   className?: string;
-  type?: 'primary' | 'secondary';
+  type?: "primary" | "secondary";
 };
 
 const NativeTokenIcon = ({ isLoading, className, type }: Props) => {
-  const statsQueryResult = useApiQuery('stats', {
+  const statsQueryResult = useApiQuery("stats", {
     queryOptions: {
       refetchOnMount: false,
       placeholderData: HOMEPAGE_STATS,
@@ -23,19 +23,25 @@ const NativeTokenIcon = ({ isLoading, className, type }: Props) => {
   });
 
   if (isLoading || statsQueryResult.isPlaceholderData) {
-    return <Skeleton borderRadius="base" className={ className }/>;
+    return <Skeleton borderRadius="base" className={className} />;
   }
 
-  const src = type === 'secondary' ? statsQueryResult.data?.secondary_coin_image : statsQueryResult.data?.coin_image;
+  const src =
+    type === "secondary"
+      ? statsQueryResult.data?.secondary_coin_image
+      : statsQueryResult.data?.coin_image;
+  console.log("src1", src);
 
   return (
     <Image
       borderRadius="base"
-      className={ className }
-      src={ src || '' }
-      alt={ `${ config.chain.currency.symbol } logo` }
-      fallback={ <TokenLogoPlaceholder borderRadius="base" className={ className }/> }
-      fallbackStrategy={ src ? 'onError' : 'beforeLoadOrError' }
+      className={className}
+      src={src || ""}
+      alt={`${config.chain.currency.symbol} logo`}
+      fallback={
+        <TokenLogoPlaceholder borderRadius="base" className={className} />
+      }
+      fallbackStrategy={src ? "onError" : "beforeLoadOrError"}
     />
   );
 };
