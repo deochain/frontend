@@ -107,29 +107,18 @@ const AddressBalance = ({ data, isLoading }: Props) => {
       </DetailsInfoItem.Label>
       <DetailsInfoItem.Value alignSelf="center" flexWrap="nowrap">
         <NativeTokenIcon boxSize={6} mr={2} isLoading={isLoading} />
-        {address?.toLowerCase() === data.hash?.toLowerCase() ? (
-          <CurrencyValue
-            value={data.coin_balance || "0"}
-            exchangeRate={data.exchange_rate}
-            decimals={String(config.chain.currency.decimals)}
-            currency={currencyUnits.ether}
-            accuracyUsd={2}
-            accuracy={8}
-            flexWrap="wrap"
-            isLoading={isLoading}
-          />
-        ) : (
-          <CurrencyValue
-            value={"0"}
-            exchangeRate={data.exchange_rate}
-            decimals={String(config.chain.currency.decimals)}
-            currency={currencyUnits.ether}
-            accuracyUsd={2}
-            accuracy={8}
-            flexWrap="wrap"
-            isLoading={isLoading}
-          />
-        )}
+        (
+        <CurrencyValue
+          value={data.coin_balance || "0"}
+          exchangeRate={data.exchange_rate}
+          decimals={String(config.chain.currency.decimals)}
+          currency={currencyUnits.ether}
+          accuracyUsd={2}
+          accuracy={8}
+          flexWrap="wrap"
+          isLoading={isLoading}
+        />
+        )
       </DetailsInfoItem.Value>
     </>
   );
