@@ -25,4 +25,4 @@ const IconSvg = ({ name, isLoading, ...props }: Props, ref: React.ForwardedRef<H
   );
 };
 
-export default React.forwardRef(IconSvg);
+  export default React.forwardRef(IconSvg);

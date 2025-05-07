@@ -33,7 +33,7 @@ const MAX_LINKS_COLUMNS = 4;
 const FRONT_VERSION_URL = `https://github.com/blockscout/frontend/tree/${config.UI.footer.frontendVersion}`;
 const FRONT_COMMIT_URL = `https://github.com/blockscout/frontend/commit/${config.UI.footer.frontendCommit}`;
 
-const Footer = () => {
+  const Footer = () => {
   // const { data: backendVersionData } = useApiQuery('config_backend_version', {
   //   queryOptions: {
   //     staleTime: Infinity,
