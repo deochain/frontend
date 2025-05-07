@@ -61,6 +61,8 @@ const TEMPLATE_MAP: Record<Route['pathname'], string> = {
   '/pools': '%network_name% DEX pools',
   '/pools/[hash]': '%network_name% pool details',
   '/interop-messages': '%network_name% interop messages',
+  '/termCondition': '%network_name% terms and conditions',
+  '/verify-tokens': '%network_name% verify tokens',
 
   // service routes, added only to make typescript happy
   '/login': '%network_name% login',

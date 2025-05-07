@@ -7,6 +7,8 @@
 declare module "nextjs-routes" {
   export type Route =
     | StaticRoute<"/404">
+    | StaticRoute<"/termCondition">
+    | StaticRoute<"/token-transfers">
     | StaticRoute<"/account/api-key">
     | StaticRoute<"/account/custom-abi">
     | StaticRoute<"/account/merits">
@@ -63,7 +65,8 @@ declare module "nextjs-routes" {
     | StaticRoute<"/stats">
     | DynamicRoute<"/token/[hash]", { "hash": string }>
     | DynamicRoute<"/token/[hash]/instance/[id]", { "hash": string; "id": string }>
-    | StaticRoute<"/token-transfers">
+    
+    | StaticRoute<"/verify-tokens">
     | StaticRoute<"/tokens">
     | DynamicRoute<"/tx/[hash]", { "hash": string }>
     | StaticRoute<"/txn-withdrawals">
@@ -73,8 +76,9 @@ declare module "nextjs-routes" {
     | StaticRoute<"/validators">
     | StaticRoute<"/verified-contracts">
     | StaticRoute<"/visualize/sol2uml">
-    | StaticRoute<"/withdrawals">;
+    | StaticRoute<"/withdrawals">
 
+    
   interface StaticRoute<Pathname> {
     pathname: Pathname;
     query?: Query | undefined;

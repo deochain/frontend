@@ -215,6 +215,12 @@ export default function useNavItems(): ReturnType {
         icon: 'token-transfers',
         isActive: pathname === '/token-transfers',
       },
+      {
+        text: 'Verify Tokens',
+        url: 'https://irta.io/VerifyToken.html',
+        icon: 'token',
+        isActive: false,
+      },
       config.features.pools.isEnabled && {
         text: 'DEX tracker',
         nextRoute: { pathname: '/pools' as const },

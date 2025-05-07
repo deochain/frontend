@@ -57,10 +57,12 @@ const OG_TYPE_DICT: Record<Route['pathname'], OGPageType> = {
   '/gas-tracker': 'Root page',
   '/mud-worlds': 'Root page',
   '/token-transfers': 'Root page',
+  '/verify-tokens': 'Regular page',
   '/advanced-filter': 'Root page',
   '/pools': 'Root page',
   '/pools/[hash]': 'Regular page',
   '/interop-messages': 'Root page',
+  '/termCondition': 'Regular page',
 
   // service routes, added only to make typescript happy
   '/login': 'Regular page',

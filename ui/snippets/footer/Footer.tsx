@@ -51,16 +51,22 @@ const Footer = () => {
       url: "https://github.com/",
     },
     {
+      icon: "social/instagram" as const,
+      iconSize: "18px",
+      text: "Instagram",
+      url: "https://www.instagram.com/inertiachain/profilecard/?igsh=MXh3YWJmc3R2ZWo1ZA==",
+    },
+    {
       icon: "social/twitter" as const,
       iconSize: "18px",
       text: "X (ex-Twitter)",
-      url: "https://x.com",
+      url: "https://x.com/inertiachain?s=11",
     },
     {
       icon: "social/discord" as const,
       iconSize: "24px",
       text: "Discord",
-      url: "https://discord.gg/",
+      url: "https://discord.gg/hPXqsqrMQn",
     },
   ];
 

@@ -54,11 +54,13 @@ export const PAGE_TYPE_DICT: Record<Route['pathname'], string> = {
   '/validators/[id]': 'Validator details',
   '/gas-tracker': 'Gas tracker',
   '/mud-worlds': 'MUD worlds',
-  '/token-transfers': 'Token transfers',
   '/advanced-filter': 'Advanced filter',
   '/pools': 'DEX pools',
   '/pools/[hash]': 'Pool details',
   '/interop-messages': 'Interop messages',
+  '/termCondition': 'Terms and conditions',
+  '/token-transfers': 'Token transfers',
+  '/verify-tokens': 'Verify tokens',
 
   // service routes, added only to make typescript happy
   '/login': 'Login',

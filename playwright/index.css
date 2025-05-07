@@ -7,3 +7,7 @@
     animation-duration: 0s !important;
     animation-play-state: paused !important;
 }
+
+.ter{
+    border: 1px solid #000;
+}
